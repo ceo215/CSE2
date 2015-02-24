@@ -3,26 +3,29 @@ import java.util.Scanner;
 public class practice{
     public static void main(String[]args){
 
-int j = 4;
-int k = 16;
 
-switch (j){
- case 1: 
-  System.out.print(1+" "); 
-  k /= 2;
-case 2:
-  System.out.print(2+" ");
-  k %= 5;
-case 3:
-  System.out.printf("3 ");
-  k -= 4;
-  break;   
-default:
-  
-  k *= 5;
+Scanner myScanner = new Scanner(System.in);
+int number = myScanner.nextInt();
+int result = 0;
+if(number>=100){
+    
+
+int number1 = number/100;
+result = number1*8*8;
+number -= number1*100;
 }
-System.out.printf("k = %2.2f\n",(double)k);
-System.out.printf("k = %4.2f\n", (double)k);
+if(number >= 10){
+    int number2 = number/10;
+result += number2*8;
+number -= number2*10;
+}
+
+result += number;
+
+    System.out.println(result);
+    
+
+
 
     }
 }
