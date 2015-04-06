@@ -2,30 +2,52 @@ import java.util.Scanner;
 
 public class practice{
     public static void main(String[]args){
-
-
-Scanner myScanner = new Scanner(System.in);
-int number = myScanner.nextInt();
-int result = 0;
-if(number>=100){
     
-
-int number1 = number/100;
-result = number1*8*8;
-number -= number1*100;
-}
-if(number >= 10){
-    int number2 = number/10;
-result += number2*8;
-number -= number2*10;
-}
-
-result += number;
-
-    System.out.println(result);
-    
-
-
-
+        Scanner myScanner = new Scanner (System.in);
+        int value = 0;
+        int i = 0;
+        do{
+            System.out.println("Input a positive integer (0 to exit): ");
+            if (myScanner.hasNextInt()){
+                value = myScanner.nextInt();
+                if (value>0){
+                if(value==0){
+                    System.out.println("Goodbye");
+                    i++;
+                }
+                boolean answer = isPrime(value);
+                if(answer==true){
+                    System.out.println("Prime!");
+                }
+                }
+                else{
+                    System.out.println("Not prime");
+                }
+            }
+            else{
+                System.out.println("Invalid");
+                myScanner.next();
+            }
+            
+            
+            
+            
+        }while(i<1);
+        
+        
     }
+    
+    public static boolean isPrime(int a){
+        int i=0;
+        for(i=2; i<=(int)Math.sqrt(a); i++){
+            if(a%i==0){
+                return false;}
+            
+                
+            
+            }
+            return true;
+            
+        }
+    
 }
